@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Bem vindo, {{usuario.nome}}
-      
+      Olá, {{usuario.nome}}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/lista-pedidos">
+        <ion-icon name="list"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

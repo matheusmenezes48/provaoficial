@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ListaPedidos</ion-title>
+    <ion-title>Lista-Pedidos</ion-title>
+
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let pedido of pedidos">
+      <ion-item>
+        {{pedido.prato}}
+      </ion-item>
+
+
+
+    </ion-item-sliding>
+
+  </ion-list>
 
 </ion-content>
