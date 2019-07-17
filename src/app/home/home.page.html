@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Bem vindo, {{usuario.nome}} </ion-title>
+      Bem vindo, {{usuario.nome}}
+      
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <img class="rounded mb-0" src="{{usuario.imagem}}">
+    <ion-button expand="full" (click)="modal()">Editar Perfil</ion-button>
   </ion-card>
 </ion-content>

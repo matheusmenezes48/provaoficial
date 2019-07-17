@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { UsuarioModalPage } from '../usuario-modal/usuario-modal.page';
+
 
 @Component({
   selector: 'app-home',
@@ -11,6 +14,17 @@ export class HomePage {
     "imagem":"https://f.i.uol.com.br/fotografia/2019/03/15/15526795065c8c025270c53_1552679506_4x3_sm.jpg"
   }
 
-  constructor() {}
+  constructor(public modalController: ModalController) {}
+
+  async modal(){
+    const modal = await this.modalController.create({
+      component: UsuarioModalPage
+    });
+    await modal.present();
+
+    modal.onDidDismiss().then((perfil) => {
+      this.usuario = perfil.data
+    })
+  }
 
 }
