@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedido-Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-header>
+      Cadastro
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-input placeholder="id" [(ngModel)]="novo_pedido.id"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="createdAt" [(ngModel)]="novo_pedido.createdAt"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="prato" [(ngModel)]="novo_pedido.prato"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="data" [(ngModel)]="novo_pedido.data"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="tamanho" [(ngModel)]="novo_pedido.tamanho"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="valor" [(ngModel)]="novo_pedido.valor"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="add()">Ok</ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

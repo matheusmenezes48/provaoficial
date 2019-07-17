@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { LoadingController } from '@ionic/angular';
+import { PedidoModalPage } from '../pedido-modal/pedido-modal.page';
+
 
 
 
@@ -24,7 +26,7 @@ export class ListaPedidosPage implements OnInit {
     return this.http.delete("https://5d262d00eeb36400145c59b3.mockapi.io/pedido/" + id)
   }
 
-  constructor(public modalcontroler: ModalController, private http: HttpClient,public loadingController: LoadingController) {
+  constructor(public modalController: ModalController, private http: HttpClient, public loadingController: LoadingController) {
     this.listar().subscribe(
       (data) => {
         this.pedidos = data
@@ -38,8 +40,26 @@ export class ListaPedidosPage implements OnInit {
         this.pedidos.splice(i, 1);
       }
     )
-}
+  }
+  add(pedido) {
+    this.adicionar(pedido).subscribe(
+      (data) => {
+        this.pedidos.push(data)
 
+      }
+    )
+  }
+
+  async modalpedido() {
+    const modal = await this.modalController.create({
+      component: PedidoModalPage
+    });
+    await modal.present();
+
+    modal.onDidDismiss().then((pedido) => {
+      this.add(pedido.data)
+    })
+  }
 
 
   ngOnInit() {
