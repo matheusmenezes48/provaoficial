@@ -15,6 +15,11 @@
         {{pedido.prato}}
       </ion-item>
 
+      <ion-item-options>
+        <ion-item-option (click)="deletar(pedido)">
+          <ion-icon ios="ios-trash" md="md-trash" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
 
 
     </ion-item-sliding>
