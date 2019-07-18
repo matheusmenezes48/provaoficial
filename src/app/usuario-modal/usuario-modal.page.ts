@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx'; 
+import { Storage } from '@ionic/storage';
+
 
 
 
@@ -14,9 +16,12 @@ export class UsuarioModalPage implements OnInit {
     "nome":"",
     "imagem":""
   }
-  constructor(public modalcontroler: ModalController, private camera: Camera) { }
+  USUARIO_KEY = 'usuario';
+
+  constructor(public modalcontroler: ModalController, private camera: Camera, public storage:Storage) { }
   atualizar(){
     this.modalcontroler.dismiss(this.usuario)
+  
   }
 
   ngOnInit() {

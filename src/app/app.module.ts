@@ -13,12 +13,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { UsuarioModalPageModule } from './usuario-modal/usuario-modal.module'; 
 import { PedidoModalPageModule } from './pedido-modal/pedido-modal.module'; 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,UsuarioModalPageModule,PedidoModalPageModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,UsuarioModalPageModule,PedidoModalPageModule,HttpClientModule,IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
